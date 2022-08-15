@@ -15,7 +15,7 @@
     --text-alt: 'Roboto Slab', serif;
 
     /* Fonts Sizes*/
-    --text-xl: 48px;
+    --text-xl: 4.8em;
     --text-lg: 32px;
     --text-md: 20px;
     --text-sm: 16px;
@@ -23,7 +23,7 @@
 
 
     /* Spacings */
-    --spacing-xl: 48px;
+    --spacing-xl: 4.8rem;
     --spacing-lg: 36px;
     --spacing-md: 24px;
     --spacing-sm: 20px;
@@ -54,16 +54,26 @@ ul {
     list-style-type: none;
 }
 
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+}
+
 a {
     text-decoration: none;
 }
 
+a:visited {
+    color: #FF5376;
+}
+
 /* Helpers */
 
-.container {
+/* .container {
     margin: 0 auto;
     max-width: 1200px;
-}
+} */
 
 .flex-row { 
     display: flex;
@@ -116,15 +126,18 @@ a {
 
 /* CARDS */
 
-#cards {
+/* #cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
-}
+} */
 
-.card {
+/* .card {
     flex: 1 1 250px;
+} */
+#cards article:nth-child(even) {
+    background-color: deeppink;
 }
 
 .card div {
@@ -149,6 +162,12 @@ a {
 
 .card__text {
     font-size: var(--text-sm);
+}
+
+/* PHOTOS */
+
+.article__paragraph {
+    font-size: var(--text-md);
 }
 
 /* GALLERY */
