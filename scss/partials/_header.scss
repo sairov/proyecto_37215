@@ -1,0 +1,45 @@
+
+/* HEADER */
+
+.main-header {
+    padding: var(--spacing-sm);
+    font-family: var(--text-alt);
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 150px;
+        min-width: 120px;
+    }
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    &__link {
+        color: var(--primary);
+        padding: 1rem;
+        font-size: var(--text-md);
+        font-weight: 500;
+        transition: all .3s;
+
+        &:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+    }
+
+    &__link--active {
+        border: 2px solid var(--primary);
+    }
+}

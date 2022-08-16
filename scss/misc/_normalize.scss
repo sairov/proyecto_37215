@@ -1,0 +1,50 @@
+/* Normalize */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $text-base;
+    color: $primary;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FF5376;
+}
+
+/* Helpers */
+
+/* .container {
+    margin: 0 auto;
+    max-width: 1200px;
+} */
+
+.flex-row { 
+    display: flex;
+    flex-direction: row;
+}
