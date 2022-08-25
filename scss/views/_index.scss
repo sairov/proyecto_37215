@@ -1,19 +1,21 @@
 
+
 /* CARDS */
 
-/* #cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-} */
-
-/* .card {
-    flex: 1 1 250px;
-} */
-#cards article:nth-child(even) {
-    background-color: deeppink;
+#cards {
+    @include flex(row, wrap, space-between, stretch, $spacing-sm);
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    // gap: $spacing-sm;
 }
+
+.card {
+    flex: 1 1 250px;
+    @include flex(column, nowrap, flex-start, stretch, 0);
+    display: flex;
+    flex-direction: column;
+} 
 
 .card div {
     /* display: flex;
@@ -23,26 +25,46 @@
 }
 
 .card__title {
-    font-family: var(--text-alt);
-    font-size: var(--text-lg);
+    font-family: $text-alt;
+    font-size: map-get($font-sizes , text-lg);
 }
 
 .card__subtitle {
-    font-family: var(--text-alt);
+    font-family: $text-alt;
     font-weight: 300;
-    font-size: var(--text-xs);
-    color: var(--accent);
+    font-size: map-get($font-sizes , text-xs);
+    color: $accent;
     margin-bottom: 1.5rem;
 }
 
 .card__text {
-    font-size: var(--text-sm);
+    font-size: map-get($font-sizes , text-sm);
 }
+
+$animales: (
+    zorro: 'zorro',
+    perro: 'perro',
+    guacamayo: 'guacamayo',
+    loro: 'loro'
+);
+
+.card__img {
+    height: 400px;
+    background-size: cover;
+}
+
+@each $key, $val in $animales {  
+    .card__img--#{$key}  {
+        @extend .card__img;
+        background-image: url('../img/#{$val}.jpg');
+    }
+}
+
 
 /* PHOTOS */
 
 .article__paragraph {
-    font-size: var(--text-md);
+    font-size: map-get($font-sizes, text-md);
 }
 
 /* GALLERY */
@@ -51,8 +73,16 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: var(--spacing-sm);
+    gap: $spacing-sm;
 }
+
+// @for $val from 0 through 5 {
+//     #gallery .gallery__img:nth-child(#{$val + 1}) {
+//         height: 400px;
+//         background-image: url('../img/img-#{$val}.jpg');
+//         background-size: cover;
+//     }
+// }
 
 #gallery .gallery__img:nth-of-type(1) {
     grid-column: span 6;
@@ -118,6 +148,6 @@
 @media (max-width: 480px) {
     .main-header__nav {
         flex-direction: column;
-        gap: var(--spacing-lg);
+        gap: $spacing-lg;
     }
 }

@@ -2,14 +2,14 @@
 /* HEADER */
 
 .main-header {
-    padding: var(--spacing-sm);
-    font-family: var(--text-alt);
+    padding: $spacing-sm;
+    font-family: $text-alt;
 
     &__nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: var(--spacing-sm);
+        gap: $spacing-sm;
         flex-wrap: wrap;
     }
 
@@ -27,19 +27,19 @@
     gap: $spacing-sm;
 
     &__link {
-        color: var(--primary);
+        color: $primary;
         padding: 1rem;
-        font-size: var(--text-md);
+        font-size: map-get($font-sizes , text-md);
         font-weight: 500;
         transition: all .3s;
 
         &:hover {
-            background-color: var(--primary);
+            background-color: $primary;
             color: white;
         }
     }
 
     &__link--active {
-        border: 2px solid var(--primary);
+        border: 2px solid $primary;
     }
 }

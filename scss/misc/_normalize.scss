@@ -1,5 +1,7 @@
 /* Normalize */
 
+$theme: light;
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +14,17 @@ html {
 
 body {
     font-family: $text-base;
-    color: $primary;
+    @if $theme == dark {
+        color: $secondary;
+        background-color: $alternative;
+    } @else if  $theme == light {
+        color: $primary;
+        background-color: $secondary;
+    } @else {
+        color: $primary;
+        background-color: $accent;
+    }
+
 }
 
 img {

@@ -13,15 +13,42 @@
     $text-alt: 'Roboto Slab', serif;
 
     /* Fonts Sizes*/
-    $text-xl: 4.8em;
-    $text-lg: 32px;
-    $text-md: 20px;
-    $text-sm: 16px;
-    $text-xs: 14px;
+    // $text-xl: 4.8em;
+    // $text-lg: 32px;
+    // $text-md: 20px;
+    // $text-sm: 16px;
+    // $text-xs: 14px;
 
+    $font-sizes: (
+        text-xl: 4.8em,
+        text-lg: 32px,
+        text-md: 20px,
+        text-sm: 16px,
+        text-xs: 14px
+    );
+
+    @each $key, $val in $font-sizes {
+        .#{$key} {
+            font-size: $val!important;
+        }
+    }
 
     /* Spacings */
     $spacing-xl: 4.8rem;
     $spacing-lg: 36px;
     $spacing-md: 24px;
     $spacing-sm: 20px;
+
+
+    // $spacings: (
+    //     spacing-xl: 4.8rem,
+    //     spacing-lg: 36px,
+    //     spacing-md: 24px,
+    //     spacing-sm: 20px
+    // );
+
+    // @each $key, $val in $spacings {
+    //     .#{$key} {
+    //         padding:
+    //     }
+    // }
